@@ -36,9 +36,9 @@
                             <span class="mr-1">Perfil</span>
                             <i class="fas fa-user-circle text-xl"></i>
                         </button>
-                        <div class="user-dropdown shadow-lg rounded-md absolute right-0 hidden bg-white z-50">
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-honey hover:text-white transition">Iniciar Sesión</a>
-                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-honey hover:text-white transition">Registrarse Ahora</a>
+                        <div class="user-dropdown shadow-lg rounded-md absolute right-0 hidden bg-white z-50 transition-all duration-300 opacity-0">
+                            <a href="login.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-honey hover:text-white transition">Iniciar Sesión</a>
+                            <a href="register.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-honey hover:text-white transition">Registrarse Ahora</a>
                         </div>
                     </div>
                     
@@ -295,37 +295,6 @@
         </div>
     </footer>
 
-    <script>
-        // Funcionalidad para el menú móvil
-        document.addEventListener('DOMContentLoaded', function() {
-            // Toggle para el menú móvil
-            const mobileMenuButton = document.querySelector('.mobile-menu-button');
-            const mobileMenu = document.querySelector('.mobile-menu');
-            
-            mobileMenuButton.addEventListener('click', function() {
-                mobileMenu.classList.toggle('hidden');
-            });
-            
-            // Toggle para el menú de usuario
-            const userMenuButton = document.querySelector('.user-menu button');
-            const userDropdown = document.querySelector('.user-dropdown');
-            
-            userMenuButton.addEventListener('click', function() {
-                userDropdown.classList.toggle('hidden');
-            });
-            
-            // Cerrar menús al hacer clic fuera
-            document.addEventListener('click', function(event) {
-                if (!userMenuButton.contains(event.target) && !userDropdown.contains(event.target)) {
-                    userDropdown.classList.add('hidden');
-                }
-                
-                if (!mobileMenuButton.contains(event.target) && !mobileMenu.contains(event.target)) {
-                    mobileMenu.classList.add('hidden');
-                }
-            });
-        });
-    </script>
     <script src="js/script.js"></script>
 </body>
 </html>

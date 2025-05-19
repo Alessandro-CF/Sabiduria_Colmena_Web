@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Plataforma Sabiduría de la Colmena - Comparte y adquiere conocimiento en comunidad">
+    <title>Sabiduría de la Colmena - Inicio de Sesión</title>
+    <style>
+        :root {
+            --primary-color: #ECA400;
+            --primary-hover: #D48E00;
+            --secondary-color: #FFD166;
+            --background-color: #F9F5E9;
+            --text-color: #333333;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+            --input-bg: #ffffff;
+            --error-color: #ef4444;
+            --success-color: #10b981;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Open Sans', Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(236, 164, 0, 0.1) 0%, transparent 30%),
+                radial-gradient(circle at 80% 70%, rgba(255, 209, 102, 0.1) 0%, transparent 30%);
+            background-size: 100% 100%;
+            background-attachment: fixed;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+            background-color: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px var(--shadow-color);
+            display: flex;
+            height: 600px;
+            position: relative;
+        }
+
+        .form-side, .info-side {
+            flex: 1;
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        .info-side {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            padding: 3rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .info-side h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .info-side p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo-container {
+            width: 180px;
+            height: 180px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo-container img {
+            max-width: 75%;
+            height: auto;
+        }
+
+        /* Decoración de fondo para el lado info */
+        .info-side::before {
+            content: "";
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .info-side::after {
+            content: "";
+            position: absolute;
+            bottom: -80px;
+            left: -80px;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Decora el lado del hexágono */
+        .hexagon {
+            position: absolute;
+            width: 60px;
+            height: 34px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            z-index: 0;
+        }
+
+        .hexagon:before,
+        .hexagon:after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 30px solid transparent;
+            border-right: 30px solid transparent;
+        }
+
+        .hexagon:before {
+            bottom: 100%;
+            border-bottom: 17px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .hexagon:after {
+            top: 100%;
+            border-top: 17px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Coloca varios hexágonos en posiciones aleatorias */
+        .hexagon:nth-child(1) {
+            top: 10%;
+            left: 20%;
+            transform: scale(0.7);
+        }
+
+        .hexagon:nth-child(2) {
+            top: 70%;
+            right: 15%;
+            transform: scale(0.9) rotate(30deg);
+        }
+
+        .hexagon:nth-child(3) {
+            top: 40%;
+            left: 10%;
+            transform: scale(0.5) rotate(15deg);
+        }
+
+        .form-side {
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .form-container {
+            width: 100%;
+            max-width: 350px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .subtitle {
+            color: #777;
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background-color: var(--input-bg);
+        }
+
+        .form-group input:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(236, 164, 0, 0.2);
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 0.85rem;
+            border: none;
+            border-radius: 8px;
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        button:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px var(--shadow-color);
+        }
+
+        .helper-text {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1rem;
+            font-size: 0.875rem;
+        }
+
+        .helper-text a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .helper-text a:hover {
+            text-decoration: underline;
+        }
+
+        .password-toggle {
+            position: absolute;
+            right: 12px;
+            top: 42px;
+            color: #9ca3af;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        .form-error {
+            color: var(--error-color);
+            font-size: 0.75rem;
+            margin-top: 0.25rem;
+            display: none;
+        }
+
+        .invalid input {
+            border-color: var(--error-color);
+        }
+
+        .invalid .form-error {
+            display: block;
+        }
+
+        .social-login {
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .social-login p {
+            margin-bottom: 1rem;
+            color: #6b7280;
+            position: relative;
+        }
+
+        .social-login p::before,
+        .social-login p::after {
+            content: "";
+            display: block;
+            width: 35%;
+            height: 1px;
+            background-color: #e5e7eb;
+            position: absolute;
+            top: 50%;
+        }
+
+        .social-login p::before {
+            left: 0;
+        }
+
+        .social-login p::after {
+            right: 0;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #f3f4f6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .social-icon:hover {
+            background-color: #e5e7eb;
+            transform: translateY(-2px);
+        }
+
+        .switch-form {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.875rem;
+        }
+
+        .switch-form a {
+            color: var(--primary-color);
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .switch-form a:hover {
+            text-decoration: underline;
+        }
+
+        #register-form {
+            display: none;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column-reverse;
+                height: auto;
+            }
+
+            .info-side {
+                padding: 2rem 1.5rem;
+                max-height: 200px;
+            }
+
+            .info-side h2 {
+                font-size: 1.8rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .info-side p {
+                font-size: 1rem;
+                margin-bottom: 1rem;
+            }
+
+            .form-side {
+                padding: 2rem 1.5rem;
+            }
+
+            .logo-container {
+                width: 100px;
+                height: 100px;
+                margin-bottom: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" style="position: absolute; top: 20px; left: 20px; color: var(--primary-color); text-decoration: none; display: flex; align-items: center; font-weight: 600;">
+        <span style="margin-right: 8px;">👈</span> Volver al inicio
+    </a>
+    <div class="container">
+        <div class="form-side">
+            <div class="form-container">
+                <!-- Login Form -->
+                <form id="login-form" class="fade-in">
+                    <h1>Bienvenido de nuevo</h1>
+                    <p class="subtitle">Inicia sesión en Sabiduría de la Colmena para continuar aprendiendo</p>
+                    
+                    <div class="form-group">
+                        <label for="login-email">Correo electrónico</label>
+                        <input type="email" id="login-email" placeholder="tucorreo@ejemplo.com" required>
+                        <span class="form-error">Introduce un correo electrónico válido</span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="login-password">Contraseña</label>
+                        <input type="password" id="login-password" placeholder="********" required>
+                        <span class="password-toggle" onclick="togglePassword('login-password', this)">👁️</span>
+                        <span class="form-error">La contraseña debe tener al menos 8 caracteres</span>
+                    </div>
+                    
+                    <div class="helper-text">
+                        <label>
+                            <input type="checkbox"> Recuérdame
+                        </label>
+                        <a href="#">¿Olvidaste tu contraseña?</a>
+                    </div>
+                    
+                    <button type="submit">Iniciar Sesión</button>
+                    
+                    <div class="social-login">
+                        <p>O continúa con</p>
+                        <div class="social-icons">
+                            <div class="social-icon">G</div>
+                            <div class="social-icon">f</div>
+                            <div class="social-icon">in</div>
+                        </div>
+                    </div>
+                    
+                    <div class="switch-form">
+                        ¿No tienes una cuenta? <a onclick="switchForm('register')">Regístrate</a>
+                    </div>
+                </form>
+                
+                <!-- Register Form -->
+                <form id="register-form" class="fade-in">
+                    <h1>Únete a la colmena</h1>
+                    <p class="subtitle">Crea una cuenta y comienza a compartir conocimiento</p>
+                    
+                    <div class="form-group">
+                        <label for="register-name">Nombre completo</label>
+                        <input type="text" id="register-name" placeholder="Tu nombre completo" required>
+                        <span class="form-error">Por favor introduce tu nombre</span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="register-email">Correo electrónico</label>
+                        <input type="email" id="register-email" placeholder="tucorreo@ejemplo.com" required>
+                        <span class="form-error">Introduce un correo electrónico válido</span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="register-password">Contraseña</label>
+                        <input type="password" id="register-password" placeholder="Crea una contraseña" required>
+                        <span class="password-toggle" onclick="togglePassword('register-password', this)">👁️</span>
+                        <span class="form-error">La contraseña debe tener al menos 8 caracteres</span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="register-confirm">Confirmar contraseña</label>
+                        <input type="password" id="register-confirm" placeholder="Repite la contraseña" required>
+                        <span class="password-toggle" onclick="togglePassword('register-confirm', this)">👁️</span>
+                        <span class="form-error">Las contraseñas no coinciden</span>
+                    </div>
+                    
+                    <button type="submit">Crear cuenta</button>
+                    
+                    <div class="switch-form">
+                        ¿Ya tienes una cuenta? <a onclick="switchForm('login')">Inicia sesión</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <div class="info-side">
+            <!-- Elementos decorativos que representan hexágonos (como celdas de colmena) -->
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            <div class="hexagon"></div>
+            
+            <div class="logo-container">
+                <!-- Aquí iría el logo real, por ahora se muestra un placeholder -->
+                <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M40 0L52 20H28L40 0Z" fill="#ECA400"/>
+                    <path d="M40 80L28 60H52L40 80Z" fill="#ECA400"/>
+                    <path d="M0 40L20 28V52L0 40Z" fill="#ECA400"/>
+                    <path d="M80 40L60 52V28L80 40Z" fill="#ECA400"/>
+                    <path d="M17.2 17.2L37.2 17.2L27.2 37.2L17.2 17.2Z" fill="#ECA400"/>
+                    <path d="M62.8 17.2L62.8 37.2L42.8 27.2L62.8 17.2Z" fill="#ECA400"/>
+                    <path d="M62.8 62.8L42.8 62.8L52.8 42.8L62.8 62.8Z" fill="#ECA400"/>
+                    <path d="M17.2 62.8L17.2 42.8L37.2 52.8L17.2 62.8Z" fill="#ECA400"/>
+                    <circle cx="40" cy="40" r="15" fill="#ECA400"/>
+                </svg>
+            </div>
+            
+            <h2>Sabiduría de la Colmena</h2>
+            <p>Comparte conocimiento, aprende de otros y crece en comunidad en nuestra plataforma colaborativa.</p>
+        </div>
+    </div>
+
+    <script>
+        function switchForm(formType) {
+            const loginForm = document.getElementById('login-form');
+            const registerForm = document.getElementById('register-form');
+            const infoSide = document.querySelector('.info-side');
+            
+            if (formType === 'register') {
+                loginForm.style.display = 'none';
+                registerForm.style.display = 'block';
+                infoSide.querySelector('h2').textContent = 'Únete a la comunidad';
+                infoSide.querySelector('p').textContent = 'Contribuye con tu conocimiento y aprende de expertos en un ambiente colaborativo.';
+            } else {
+                loginForm.style.display = 'block';
+                registerForm.style.display = 'none';
+                infoSide.querySelector('h2').textContent = 'Sabiduría de la Colmena';
+                infoSide.querySelector('p').textContent = 'Comparte conocimiento, aprende de otros y crece en comunidad en nuestra plataforma colaborativa.';
+            }
+        }
+        
+        function togglePassword(inputId, icon) {
+            const input = document.getElementById(inputId);
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.textContent = '🔒';
+            } else {
+                input.type = 'password';
+                icon.textContent = '👁️';
+            }
+        }
+        
+        // Validación básica de formularios
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                let valid = true;
+                
+                // Validar campos
+                const inputs = this.querySelectorAll('input[required]');
+                inputs.forEach(input => {
+                    const group = input.parentElement;
+                    
+                    // Validación de correo
+                    if (input.type === 'email') {
+                        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                        if (!emailRegex.test(input.value)) {
+                            group.classList.add('invalid');
+                            valid = false;
+                        } else {
+                            group.classList.remove('invalid');
+                        }
+                    }
+                    
+                    // Validación de contraseña
+                    if (input.type === 'password' && input.id !== 'register-confirm') {
+                        if (input.value.length < 8) {
+                            group.classList.add('invalid');
+                            valid = false;
+                        } else {
+                            group.classList.remove('invalid');
+                        }
+                    }
+                    
+                    // Validación de confirmación de contraseña
+                    if (input.id === 'register-confirm') {
+                        const password = document.getElementById('register-password');
+                        if (input.value !== password.value) {
+                            group.classList.add('invalid');
+                            valid = false;
+                        } else {
+                            group.classList.remove('invalid');
+                        }
+                    }
+                    
+                    // Validación genérica para campos vacíos
+                    if (input.value.trim() === '') {
+                        group.classList.add('invalid');
+                        valid = false;
+                    }
+                });
+                
+                if (valid) {
+                    // Aquí se realizaría el envío del formulario
+                    alert('Formulario enviado correctamente');
+                    form.reset();
+                }
+            });
+        });
+    </script>
+    <script src="js/script.js"></script>
+</body>
+</html>
