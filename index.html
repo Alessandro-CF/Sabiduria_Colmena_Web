@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabiduría de la Colmena</title>
+    <!-- Reemplazando CDN de Tailwind por la hoja de estilos completa para mejor soporte -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Navbar mejorado -->
+    <nav class="bg-white shadow-md">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <div class="hexagon-logo mr-2">
+                            <span class="text-honey">C</span>
+                        </div>
+                        <span class="text-gray-800 font-semibold text-lg hidden md:inline-block">Sabiduría de la Colmena</span>
+                    </a>
+                </div>
+                
+                <div class="hidden md:flex md:items-center md:space-x-8">
+                    <a href="#" class="nav-link active">Inicio</a>
+                    <a href="#" class="nav-link">Comunidad</a>
+                    <a href="#" class="nav-link">Productos</a>
+                    <a href="#" class="nav-link">Capacitaciones</a>
+                </div>
+                
+                <div class="flex items-center">
+                    <div class="relative user-menu">
+                        <button class="flex items-center text-honey hover:text-amber-600 transition">
+                            <span class="mr-1">Perfil</span>
+                            <i class="fas fa-user-circle text-xl"></i>
+                        </button>
+                        <div class="user-dropdown shadow-lg rounded-md absolute right-0 hidden bg-white z-50">
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-honey hover:text-white transition">Iniciar Sesión</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-honey hover:text-white transition">Registrarse Ahora</a>
+                        </div>
+                    </div>
+                    
+                    <button class="ml-6 md:hidden mobile-menu-button focus:outline-none">
+                        <i class="fas fa-bars text-honey text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu hidden md:hidden">
+            <a href="#" class="block py-2 px-4 text-sm hover:bg-honey hover:text-white transition">Inicio</a>
+            <a href="#" class="block py-2 px-4 text-sm hover:bg-honey hover:text-white transition">Comunidad</a>
+            <a href="#" class="block py-2 px-4 text-sm hover:bg-honey hover:text-white transition">Productos</a>
+            <a href="#" class="block py-2 px-4 text-sm hover:bg-honey hover:text-white transition">Capacitaciones</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="py-12 md:py-20 bg-gradient-to-r from-amber-50 to-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">
+                        Bienvenido a
+                        <span class="text-honey block mt-2">Sabiduría de la Colmena</span>
+                    </h1>
+                    <p class="text-gray-600 mb-8">
+                        Una comunidad dedicada al arte de la apicultura y la conservación de las abejas. 
+                        Compartimos conocimientos tradicionales y técnicas modernas para el cuidado 
+                        responsable y sostenible de estos valiosos polinizadores.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#" class="btn btn-primary">
+                            <i class="fas fa-users mr-2"></i>Explorar Comunidad
+                        </a>
+                        <a href="#" class="btn btn-secondary">
+                            <i class="fas fa-store mr-2"></i>Ver Productos
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="relative honeycomb-pattern p-4">
+                        <img src="/api/placeholder/600/400" alt="Cuidado de colmenas" class="rounded-lg shadow-xl transform hover:scale-105 transition duration-300">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- La Importancia de la Apicultura -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title text-center mb-12">La Importancia de la Apicultura</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="feature-card">
+                    <div class="icon-container">
+                        <i class="fas fa-leaf text-honey"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Biodiversidad</h3>
+                    <p class="text-gray-600">
+                        Las abejas polinizan más del 70% de los cultivos, siendo esenciales para mantener 
+                        la diversidad de especies vegetales y garantizar la seguridad alimentaria global.
+                    </p>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="feature-card">
+                    <div class="icon-container">
+                        <i class="fas fa-seedling text-honey"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Equilibrio Ecológico</h3>
+                    <p class="text-gray-600">
+                        Como polinizadores clave, las abejas ayudan a mantener el equilibrio de los ecosistemas
+                        y contribuyen al ciclo vital de numerosas especies vegetales y animales.
+                    </p>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="feature-card">
+                    <div class="icon-container">
+                        <i class="fas fa-flask text-honey"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Productos Naturales</h3>
+                    <p class="text-gray-600">
+                        Además de la miel, las abejas nos proporcionan propóleo, cera, jalea real y polen, 
+                        productos con múltiples beneficios para la salud y diversos usos industriales.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Artículos Destacados -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title text-center mb-12">Artículos destacados</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Artículo 1 -->
+                <article class="article-card bg-blue-50">
+                    <div class="article-image bg-blue-100">
+                        <img src="/api/placeholder/400/250" alt="Artículo sobre apicultura" class="w-full h-48 object-cover rounded-t-lg">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-sm text-gray-600">Autor</span>
+                            <div class="flex items-center">
+                                <i class="fas fa-bee text-honey mr-2"></i>
+                                <button class="like-button">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Cómo iniciar tu primera colmena</h3>
+                        <p class="text-gray-600 mb-4">
+                            Guía completa para principiantes que desean comenzar en el mundo de la apicultura, 
+                            con consejos prácticos y recomendaciones de equipamiento esencial.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-gray-500">Mayo 15, 2025</span>
+                            <a href="#" class="text-honey hover:text-amber-600 font-medium text-sm">Leer más</a>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Artículo 2 -->
+                <article class="article-card bg-blue-100">
+                    <div class="article-image bg-blue-200">
+                        <img src="/api/placeholder/400/250" alt="Artículo sobre abejas" class="w-full h-48 object-cover rounded-t-lg">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-sm text-gray-600">Autor</span>
+                            <div class="flex items-center">
+                                <i class="fas fa-bee text-honey mr-2"></i>
+                                <button class="like-button">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Propiedades medicinales del propóleo</h3>
+                        <p class="text-gray-600 mb-4">
+                            Descubre los beneficios del propóleo, un producto natural de las abejas con 
+                            propiedades antibacterianas, antiinflamatorias y antioxidantes.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-gray-500">Mayo 10, 2025</span>
+                            <a href="#" class="text-honey hover:text-amber-600 font-medium text-sm">Leer más</a>
+                        </div>
+                    </div>
+                </article>
+                
+                <!-- Artículo 3 -->
+                <article class="article-card bg-amber-50">
+                    <div class="article-image bg-amber-100">
+                        <img src="/api/placeholder/400/250" alt="Artículo sobre miel" class="w-full h-48 object-cover rounded-t-lg">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-sm text-gray-600">Autor</span>
+                            <div class="flex items-center">
+                                <i class="fas fa-bee text-honey mr-2"></i>
+                                <button class="like-button">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Tipos de miel y sus características</h3>
+                        <p class="text-gray-600 mb-4">
+                            Aprende a diferenciar entre los distintos tipos de miel según su origen floral, 
+                            procesamiento y propiedades organolépticas y nutricionales.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-gray-500">Mayo 5, 2025</span>
+                            <a href="#" class="text-honey hover:text-amber-600 font-medium text-sm">Leer más</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="btn btn-outline">
+                    Ver todos los artículos
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer mejorado -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+                <div class="md:col-span-4">
+                    <div class="flex items-center mb-4">
+                        <div class="hexagon-logo-footer mr-2">
+                            <span>C</span>
+                        </div>
+                        <span class="text-xl font-semibold">Sabiduría de la Colmena</span>
+                    </div>
+                    <p class="text-gray-400 max-w-md">
+                        Impulsando el conocimiento apícola y la conservación de las abejas
+                        a través de la comunidad y la educación.
+                    </p>
+                </div>
+                
+                <div class="md:col-span-2">
+                    <h3 class="text-lg font-semibold mb-4">Enlaces Rápidos</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-honey transition">Inicio</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-honey transition">Comunidad</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-honey transition">Productos</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-honey transition">Capacitaciones</a></li>
+                    </ul>
+                </div>
+                
+                <div class="md:col-span-2">
+                    <h3 class="text-lg font-semibold mb-4">Contáctenos</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-honey mr-2"></i>
+                            <a href="mailto:info@sabiduriacolmena.com" class="text-gray-400 hover:text-honey transition">info@sabiduriacolmena.com</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone text-honey mr-2"></i>
+                            <span class="text-gray-400">(+34) 123 456 789</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="md:col-span-4">
+                    <h3 class="text-lg font-semibold mb-4">Recibir notificaciones</h3>
+                    <form class="flex">
+                        <input type="email" placeholder="Tu correo electrónico" class="px-4 py-2 w-full rounded-l focus:outline-none text-gray-800">
+                        <button type="submit" class="bg-honey hover:bg-amber-600 px-4 py-2 rounded-r transition">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                    <div class="mt-4 flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-honey transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-honey transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-honey transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-honey transition"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Sabiduría de la Colmena. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Funcionalidad para el menú móvil
+        document.addEventListener('DOMContentLoaded', function() {
+            // Toggle para el menú móvil
+            const mobileMenuButton = document.querySelector('.mobile-menu-button');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Toggle para el menú de usuario
+            const userMenuButton = document.querySelector('.user-menu button');
+            const userDropdown = document.querySelector('.user-dropdown');
+            
+            userMenuButton.addEventListener('click', function() {
+                userDropdown.classList.toggle('hidden');
+            });
+            
+            // Cerrar menús al hacer clic fuera
+            document.addEventListener('click', function(event) {
+                if (!userMenuButton.contains(event.target) && !userDropdown.contains(event.target)) {
+                    userDropdown.classList.add('hidden');
+                }
+                
+                if (!mobileMenuButton.contains(event.target) && !mobileMenu.contains(event.target)) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+    <script src="js/script.js"></script>
+</body>
+</html>
