@@ -18,13 +18,33 @@ function setupUserMenu() {
     if (userMenuButton && userDropdown) {
         userMenuButton.addEventListener('click', (e) => {
             e.preventDefault();
+            e.stopPropagation();
+            
+            // Toggle visibility and opacity
             userDropdown.classList.toggle('hidden');
+            
+            // Small delay to apply opacity transition after display change
+            setTimeout(() => {
+                if (!userDropdown.classList.contains('hidden')) {
+                    userDropdown.classList.add('opacity-100');
+                    userDropdown.classList.remove('opacity-0');
+                } else {
+                    userDropdown.classList.remove('opacity-100');
+                    userDropdown.classList.add('opacity-0');
+                }
+            }, 10);
         });
 
         // Close dropdown when clicking outside
         document.addEventListener('click', (e) => {
             if (!userMenuButton.contains(e.target) && !userDropdown.contains(e.target)) {
-                userDropdown.classList.add('hidden');
+                userDropdown.classList.remove('opacity-100');
+                userDropdown.classList.add('opacity-0');
+                
+                // Delay hiding to allow opacity transition
+                setTimeout(() => {
+                    userDropdown.classList.add('hidden');
+                }, 200);
             }
         });
     }
@@ -85,6 +105,53 @@ function setupScrollAnimations() {
     });
 }
 
+// Función para manejar el formulario de registro
+function setupRegisterForm() {
+    const registerForm = document.getElementById('register-form');
+    
+    if (registerForm) {
+        registerForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Validar contraseñas
+            const password = registerForm.querySelector('input[name="password"]')?.value;
+            const confirmPassword = registerForm.querySelector('input[name="confirm_password"]')?.value;
+            
+            if (password && confirmPassword && password !== confirmPassword) {
+                alert('Las contraseñas no coinciden');
+                return;
+            }
+            
+            // Simulación de registro exitoso
+            alert('Registro exitoso. Bienvenido a Sabiduría de la Colmena!');
+            
+            // En un caso real, aquí se enviarían los datos al servidor
+            
+            // Redirección a la página principal
+            window.location.href = 'index.html';
+        });
+    }
+}
+
+// Función para manejar el formulario de login
+function setupLoginForm() {
+    const loginForm = document.getElementById('login-form');
+    
+    if (loginForm) {
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simulación de inicio de sesión exitoso
+            alert('Inicio de sesión exitoso. Bienvenido de nuevo!');
+            
+            // En un caso real, aquí se enviarían los datos al servidor y se verificaría la autenticación
+            
+            // Redirección a la página principal
+            window.location.href = 'index.html';
+        });
+    }
+}
+
 // Initialize all features when DOM is fully loaded
 document.addEventListener('DOMContentLoaded', () => {
     setupMobileMenu();
@@ -92,6 +159,8 @@ document.addEventListener('DOMContentLoaded', () => {
     setupLikeButtons();
     setupNavLinks();
     setupScrollAnimations();
+    setupRegisterForm();
+    setupLoginForm();
     
     // Set the first nav link as active by default
     const firstNavLink = document.querySelector('.nav-link');
