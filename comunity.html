@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabiduría de la Colmena</title>
+
+    <link rel="icon" href="img/logo.ico" type="image/x-icon" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body class="bg-gray-50">
+    <!-- Navbar mejorado -->
+    <nav class="bg-white shadow-md">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <div class="hexagon-logo mr-2">
+                            <span class="text-honey">C</span>
+                        </div>
+                        <span class="text-gray-800 font-semibold text-lg hidden md:inline-block">Sabiduría de la
+                            Colmena</span>
+                    </a>
+                </div>
+
+                <div class="hidden md:flex md:items-center md:space-x-8">
+                    <a href="index.html" class="nav-link active">Inicio</a>
+                    <a href="comunity.html" class="nav-link">Comunidad</a>
+                    <a href="#" class="nav-link">Productos</a>
+                    <a href="#" class="nav-link">Capacitaciones</a>
+                </div>
+
+                <div class="flex items-center">
+                    <div class="relative user-menu">
+                        <button class="flex items-center text-honey hover:text-amber-600 transition">
+                            <span class="mr-1">Perfil</span>
+                            <i class="fas fa-user-circle text-xl"></i>
+                        </button>
+                        <div
+                            class="user-dropdown shadow-lg rounded-md absolute right-0 hidden bg-white z-50 transition-all duration-300 opacity-0">
+                            <a href="login.html"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-honey hover:text-white transition">Iniciar
+                                Sesión</a>
+                            <a href="register.html"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-honey hover:text-white transition">Registrarse
+                                Ahora</a>
+                        </div>
+                    </div>
+
+                    <button class="ml-6 md:hidden mobile-menu-button focus:outline-none">
+                        <i class="fas fa-bars text-honey text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu hidden md:hidden">
+            <a href="index.html" class="block py-2 px-4 text-sm hover:bg-honey hover:text-white transition">Inicio</a>
+            <a href="#" class="block py-2 px-4 text-sm hover:bg-honey hover:text-white transition">Comunidad</a>
+            <a href="#" class="block py-2 px-4 text-sm hover:bg-honey hover:text-white transition">Productos</a>
+            <a href="#" class="block py-2 px-4 text-sm hover:bg-honey hover:text-white transition">Capacitaciones</a>
+        </div>
+    </nav>
+
+    <!-- Sección de acciones -->
+    <section class="acciones-sec" aria-label="Acciones rápidas y búsqueda">
+        <div class="container acciones-layout">
+            <div class="acciones-left">
+                <button class="btn-publicar" type="button">+ Crear publicación</button>
+                <a href="#">Tus publicaciones</a>
+                <a href="#">Guardados</a>
+            </div>
+            <div class="busqueda-wrapper">
+                <input type="search" class="busqueda" placeholder="Buscar..." aria-label="Buscar publicaciones" />
+                <span class="icono-busqueda" aria-hidden="true">&#128269;</span>
+            </div>
+            <div class="acciones">
+                <button class="noti" aria-label="Notificaciones">🔔</button>
+                <span class="usuario" aria-label="Nombre de usuario">USUARIO</span>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Categorías -->
+    <section class="categorias container" aria-labelledby="categorias-titulo">
+        <h2 id="categorias-titulo">Explora nuestras Categorías</h2>
+        <div class="grid">
+            <div class="card" role="listitem">🔐 Seguridad</div>
+            <div class="card" role="listitem">🩺 Cuidados y salud de la colmena</div>
+            <div class="card" role="listitem">📋 Consejos y buenas prácticas</div>
+            <div class="card" role="listitem">🧼 Limpieza</div>
+            <div class="card" role="listitem">🛒 Productos recomendados</div>
+        </div>
+    </section>
+
+    <!-- Frase motivacional -->
+    <section class="motiva" aria-label="Frase motivacional">
+        <h2>¡Anímate a escribir y compartir tus conocimientos, para esta Gran Colmena!</h2>
+    </section>
+
+    <!-- Publicaciones -->
+    <section class="publicaciones container" aria-labelledby="publicaciones-titulo">
+        <h2 id="publicaciones-titulo">Más populares</h2>
+        <div class="grid">
+            <article class="post">
+                <div class="img-placeholder">
+                    <img src="https://thumbs.dreamstime.com/b/macro-foto-de-abejas-trabajando-en-panales-miel-apicultura-y-producci%C3%B3n-217379444.jpg"
+                        alt="Abejas trabajando en panales" />
+                </div>
+                <div class="reacciones" aria-label="Reacciones">🐝 ❤️</div>
+                <p>ciencia de abejas en buen estado.</p>
+                <p class="meta">Publicado hace 2 semanas</p>
+            </article>
+            <article class="post">
+                <div class="img-placeholder">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQh1zBx_tEUV1vn7phkD7NMBm4vCXO1AqALCgs5dT3u&s"
+                        alt="Imagen apícola" />
+                </div>
+                <div class="reacciones" aria-label="Reacciones">🐝 ❤️</div>
+                <p>ciencia de abejas en buen estado.</p>
+                <p class="meta">Publicado hace 3 semanas</p>
+            </article>
+            <article class="post">
+                <div class="img-placeholder">
+                    <img src="https://cdn.pixabay.com/photo/2018/02/02/23/22/bees-3126717_960_720.jpg"
+                        alt="Panales con abejas" />
+                </div>
+                <div class="reacciones" aria-label="Reacciones">🐝 ❤️</div>
+                <p>ciencia de abejas en buen estado.</p>
+                <p class="meta">Publicado hace 4 semanas</p>
+            </article>
+        </div>
+
+        <a href="#" class="btn-mas" role="button" aria-label="Ver más publicaciones">Más publicaciones</a>
+    </section>
+
+    <!-- Footer mejorado -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+                <div class="md:col-span-4">
+                    <div class="flex items-center mb-4">
+                        <div class="hexagon-logo-footer mr-2">
+                            <span>C</span>
+                        </div>
+                        <span class="text-xl font-semibold">Sabiduría de la Colmena</span>
+                    </div>
+                    <p class="text-gray-400 max-w-md">
+                        Impulsando el conocimiento apícola y la conservación de las abejas
+                        a través de la comunidad y la educación.
+                    </p>
+                </div>
+
+                <div class="md:col-span-2">
+                    <h3 class="text-lg font-semibold mb-4">Enlaces Rápidos</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-honey transition">Inicio</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-honey transition">Comunidad</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-honey transition">Productos</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-honey transition">Capacitaciones</a></li>
+                    </ul>
+                </div>
+
+                <div class="md:col-span-2">
+                    <h3 class="text-lg font-semibold mb-4">Contáctenos</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-honey mr-2"></i>
+                            <a href="mailto:info@sabiduriacolmena.com"
+                                class="text-gray-400 hover:text-honey transition">info@sabiduriacolmena.com</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone text-honey mr-2"></i>
+                            <span class="text-gray-400">(+34) 123 456 789</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="md:col-span-4">
+                    <h3 class="text-lg font-semibold mb-4">Recibir notificaciones</h3>
+                    <form class="flex">
+                        <input type="email" placeholder="Tu correo electrónico"
+                            class="px-4 py-2 w-full rounded-l focus:outline-none text-gray-800">
+                        <button type="submit" class="bg-honey hover:bg-amber-600 px-4 py-2 rounded-r transition">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                    <div class="mt-4 flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-honey transition"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-honey transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-honey transition"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-honey transition"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Sabiduría de la Colmena. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

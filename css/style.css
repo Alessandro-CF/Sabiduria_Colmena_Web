@@ -284,3 +284,249 @@ body {
 .fadeIn {
   animation: fadeIn 0.5s ease forwards;
 }
+
+/* Estilos comunidad */
+:root {
+  --primary: #f59e0b;
+  --primary-dark: #d97706;
+  --bg-light: #f9fafb;
+  --bg-highlight: #fef3c7;
+  --bg-motiva: #fefce8;
+  --text-dark: #333;
+  --text-muted: #666;
+  --footer-bg: #1f2937;
+}
+
+/* Reset y base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Header */
+.header {
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  width: 40px;
+  vertical-align: middle;
+}
+
+.logo span {
+  margin-left: 10px;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #444;
+  transition: color 0.3s ease;
+}
+
+.nav a:hover,
+.nav a.active {
+  color: var(--primary-dark);
+}
+
+.nav a.active {
+  font-weight: bold;
+}
+
+.acciones {
+  display: flex;
+  align-items: center;
+}
+
+.acciones button.noti {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.usuario {
+  font-weight: 600;
+}
+
+/* Sección de acciones (buscador, botones) */
+.acciones-sec {
+  background-color: var(--bg-highlight);
+  padding: 1rem 0;
+}
+
+.acciones-layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.acciones-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.btn-publicar {
+  background-color: var(--primary);
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-publicar:hover {
+  background-color: var(--primary-dark);
+}
+
+.acciones-left a {
+  text-decoration: underline;
+  color: var(--primary-dark);
+}
+
+/* Buscador */
+.busqueda-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.busqueda {
+  padding: 8px 35px 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.icono-busqueda {
+  position: absolute;
+  right: 10px;
+  color: #888;
+  pointer-events: none;
+  font-size: 1rem;
+}
+
+/* Categorías */
+.categorias {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.categorias h2 {
+  margin-bottom: 1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* Frase motivacional */
+.motiva {
+  background-color: var(--bg-motiva);
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.motiva h2 {
+  color: #b45309;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* Publicaciones */
+.publicaciones {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.publicaciones h2 {
+  margin-bottom: 1rem;
+}
+
+.post {
+  background: white;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.img-placeholder {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.img-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.reacciones {
+  color: var(--primary);
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.meta {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.btn-mas {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 10px 20px;
+  background: var(--primary);
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-mas:hover {
+  background-color: var(--primary-dark);
+}
+
