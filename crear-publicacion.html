@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Publicación - Sabiduría de la Colmena</title>
+
+    <link rel="icon" href="img/logo.ico" type="image/x-icon" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body class="bg-gray-50">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <a href="index.html" class="text-gray-800 font-semibold text-lg">Sabiduría de la Colmena</a>
+                <a href="comunidad.html" class="nav-link">Comunidad</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección de Crear Publicación -->
+    <section class="container mx-auto mt-12 max-w-xl">
+        <div class="bg-white rounded-xl shadow-lg p-8">
+            <div class="flex items-center mb-6">
+                <div class="w-12 h-12 flex items-center justify-center bg-yellow-100 rounded-full mr-4">
+                    <i class="fas fa-pen-nib text-yellow-500 text-2xl"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-honey">Crear Nueva Publicación</h2>
+            </div>
+            <form id="crear-publicacion-form" class="space-y-5">
+                <div>
+                    <label for="titulo" class="block text-gray-700 font-semibold mb-1">Título</label>
+                    <input type="text" id="titulo" name="titulo" required class="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-2 focus:ring-honey focus:outline-none transition">
+                </div>
+                <div>
+                    <label for="contenido" class="block text-gray-700 font-semibold mb-1">Contenido</label>
+                    <textarea id="contenido" name="contenido" rows="4" required class="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-2 focus:ring-honey focus:outline-none transition"></textarea>
+                </div>
+                <div>
+                    <label for="imagen" class="block text-gray-700 font-semibold mb-1">URL de la Imagen</label>
+                    <input type="url" id="imagen" name="imagen" class="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-2 focus:ring-honey focus:outline-none transition">
+                </div>
+                <button type="submit" class="w-full bg-honey hover:bg-amber-600 text-white font-bold py-2 px-4 rounded transition flex items-center justify-center gap-2">
+                    <i class="fas fa-paper-plane"></i> Publicar
+                </button>
+            </form>
+            <div id="publicacion-feedback" class="hidden mt-4 text-center text-green-600 font-semibold"></div>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('crear-publicacion-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const titulo = document.getElementById('titulo').value;
+            const contenido = document.getElementById('contenido').value;
+            const imagen = document.getElementById('imagen').value;
+
+            // Recuperar publicaciones existentes o inicializar array
+            let publicaciones = JSON.parse(localStorage.getItem('publicaciones')) || [];
+
+            // Agregar nueva publicación
+            publicaciones.unshift({
+                titulo,
+                contenido,
+                imagen,
+                fecha: new Date().toLocaleDateString(),
+                meGusta: 0,
+                comentarios: 0
+            });
+
+            // Guardar en localStorage
+            localStorage.setItem('publicaciones', JSON.stringify(publicaciones));
+
+            // Feedback y redirección
+            document.getElementById('publicacion-feedback').textContent = 'Publicación creada con éxito.';
+            document.getElementById('publicacion-feedback').classList.remove('hidden');
+            setTimeout(() => {
+                window.location.href = 'comunity.html';
+            }, 1200);
+        });
+    </script>
+</body>
+
+</html>

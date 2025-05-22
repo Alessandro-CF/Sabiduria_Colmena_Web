@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notificaciones - Sabiduría de la Colmena</title>
+
+    <link rel="icon" href="img/logo.ico" type="image/x-icon" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body class="bg-gray-50">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex items-center">
+                        <div class="hexagon-logo mr-2 flex items-center justify-center w-10 h-10 bg-yellow-400 rounded-md" style="clip-path: polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%);">
+                            <i class="fas fa-bell text-white text-xl"></i>
+                        </div>
+                        <span class="text-gray-800 font-semibold text-lg hidden md:inline-block">Sabiduría de la Colmena</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex md:items-center md:space-x-8">
+                    <a href="index.html" class="nav-link">Inicio</a>
+                    <a href="comunity.html" class="nav-link">Comunidad</a>
+                    <a href="productos.html" class="nav-link">Productos</a>
+                    <a href="capacitaciones.html" class="nav-link">Capacitaciones</a>
+                </div>
+                <div class="flex items-center">
+                    <div class="relative user-menu">
+                        <button class="flex items-center text-honey hover:text-amber-600 transition">
+                            <span class="mr-1">Perfil</span>
+                            <i class="fas fa-user-circle text-xl"></i>
+                        </button>
+                        <div class="user-dropdown shadow-lg rounded-md absolute right-0 hidden bg-white z-50 transition-all duration-300 opacity-0">
+                            <a href="login.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-honey hover:text-white transition">Iniciar Sesión</a>
+                            <a href="register.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-honey hover:text-white transition">Registrarse Ahora</a>
+                        </div>
+                    </div>
+                    <button class="ml-6 md:hidden mobile-menu-button focus:outline-none">
+                        <i class="fas fa-bars text-honey text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="mobile-menu hidden md:hidden">
+            <a href="index.html" class="block py-2 px-4 text-sm hover:bg-honey hover:text-white transition">Inicio</a>
+            <a href="comunity.html" class="block py-2 px-4 text-sm hover:bg-honey hover:text-white transition">Comunidad</a>
+            <a href="productos.html" class="block py-2 px-4 text-sm hover:bg-honey hover:text-white transition">Productos</a>
+            <a href="capacitaciones.html" class="block py-2 px-4 text-sm hover:bg-honey hover:text-white transition">Capacitaciones</a>
+            <a href="notificaciones.html" class="block py-2 px-4 text-sm hover:bg-honey hover:text-white transition">Notificaciones</a>
+            <a href="login.html" class="block py-2 px-4 text-sm hover:bg-honey hover:text-white transition">Iniciar Sesión</a>
+            <a href="register.html" class="block py-2 px-4 text-sm hover:bg-honey hover:text-white transition">Registrarse Ahora</a>
+        </div>
+    </nav>
+
+    <!-- Sección de Notificaciones Mejorada -->
+    <section class="container mx-auto mt-10 max-w-2xl">
+        <h2 class="text-3xl font-bold mb-8 text-center text-honey">Tus Notificaciones</h2>
+        <div class="space-y-4">
+            <div class="flex items-start bg-white rounded-lg shadow p-4">
+                <div class="flex-shrink-0 mr-4">
+                    <div class="w-12 h-12 flex items-center justify-center bg-yellow-100 rounded-full">
+                        <i class="fas fa-heart text-pink-500 text-2xl"></i>
+                    </div>
+                </div>
+                <div>
+                    <p class="text-gray-700"><span class="font-semibold text-honey">Usuario X</span> le dio <span class="font-semibold text-pink-500">"me gusta"</span> a tu publicación.</p>
+                    <span class="text-xs text-gray-400">Hace 2 minutos</span>
+                </div>
+            </div>
+            <div class="flex items-start bg-white rounded-lg shadow p-4">
+                <div class="flex-shrink-0 mr-4">
+                    <div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full">
+                        <i class="fas fa-comment-dots text-blue-500 text-2xl"></i>
+                    </div>
+                </div>
+                <div>
+                    <p class="text-gray-700"><span class="font-semibold text-honey">Usuario Y</span> comentó en tu publicación.</p>
+                    <span class="text-xs text-gray-400">Hace 10 minutos</span>
+                </div>
+            </div>
+            <div class="flex items-start bg-white rounded-lg shadow p-4">
+                <div class="flex-shrink-0 mr-4">
+                    <div class="w-12 h-12 flex items-center justify-center bg-green-100 rounded-full">
+                        <i class="fas fa-bookmark text-green-500 text-2xl"></i>
+                    </div>
+                </div>
+                <div>
+                    <p class="text-gray-700"><span class="font-semibold text-honey">Usuario Z</span> guardó tu publicación.</p>
+                    <span class="text-xs text-gray-400">Hace 1 hora</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 text-white py-12 mt-12">
+        <div class="container mx-auto px-4">
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Sabiduría de la Colmena. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
